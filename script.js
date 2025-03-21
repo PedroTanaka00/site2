@@ -464,3 +464,177 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Elements
+    const form = document.getElementById('consulta-form');
+    const formContainer = document.getElementById('form-container');
+    const successMessage = document.getElementById('success-message');
+    const newConsultationBtn = document.getElementById('new-consultation-btn');
+    const submitBtn = document.getElementById('submit-btn');
+    
+    // Form steps
+    const formSteps = document.querySelectorAll('.form-step');
+    const progressSteps = document.querySelectorAll('.progress-step');
+    const progressLines = [
+      document.getElementById('progress-line-1'),
+      document.getElementById('progress-line-2')
+    ];
+    
+    // Form fields
+    const formFields = {
+      nome: document.getElementById('nome'),
+      email: document.getElementById('email'),
+      telefone: document.getElementById('telefone'),
+      area: document.getElementById('area'),
+      mensagem: document.getElementById('mensagem'),
+      data: document.getElementById('data'),
+      termos: document.getElementById('termos')
+    };
+    
+    // Initialize floating labels
+    initFloatingLabels();
+    
+    // Next and Previous buttons
+    const nextButtons = document.querySelectorAll('.btn-next');
+    const prevButtons = document.querySelectorAll('.btn-prev');
+    
+    nextButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const nextStep = parseInt(this.dataset.next);
+        goToStep(nextStep);
+      });
+    });
+    
+    prevButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const prevStep = parseInt(this.dataset.prev);
+        goToStep(prevStep);
+      });
+    });
+    
+    // Form submission
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Show loading state
+      submitBtn.classList.add('loading');
+      
+      // Simulate form submission (replace with actual form submission)
+      setTimeout(() => {
+        submitBtn.classList.remove('loading');
+        showSuccessMessage();
+      }, 1500);
+    });
+    
+    // New consultation button
+    newConsultationBtn.addEventListener('click', function() {
+      hideSuccessMessage();
+      form.reset();
+      goToStep(1);
+    });
+    
+    // Add hover effects to contact cards
+    const contactCards = document.querySelectorAll('.contact-card');
+    contactCards.forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px)';
+        this.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.1)';
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = '';
+        this.style.boxShadow = '';
+      });
+    });
+    
+    // Functions
+    function initFloatingLabels() {
+      // For each input and textarea with floating label
+      document.querySelectorAll('.floating-label input, .floating-label textarea').forEach(field => {
+        // Set placeholder to empty string to make floating label work
+        field.setAttribute('placeholder', ' ');
+        
+        // Check if field already has value on page load
+        if (field.value.trim() !== '') {
+          field.classList.add('has-value');
+        }
+        
+        // Add focus and blur event listeners
+        field.addEventListener('focus', function() {
+          this.parentElement.classList.add('focused');
+        });
+        
+        field.addEventListener('blur', function() {
+          this.parentElement.classList.remove('focused');
+          if (this.value.trim() !== '') {
+            this.classList.add('has-value');
+          } else {
+            this.classList.remove('has-value');
+          }
+        });
+      });
+    }
+    
+    function goToStep(stepNumber) {
+      // Hide all steps
+      formSteps.forEach(step => {
+        step.classList.remove('active');
+      });
+      
+      // Show the target step
+      document.getElementById(`step-${stepNumber}`).classList.add('active');
+      
+      // Update progress steps
+      progressSteps.forEach((step, index) => {
+        const stepNum = index + 1;
+        
+        if (stepNum < stepNumber) {
+          step.classList.add('completed');
+          step.classList.add('active');
+          if (progressLines[index]) {
+            progressLines[index].style.width = '100%';
+          }
+        } else if (stepNum === stepNumber) {
+          step.classList.add('active');
+          step.classList.remove('completed');
+          if (index > 0 && progressLines[index-1]) {
+            progressLines[index-1].style.width = '100%';
+          }
+        } else {
+          step.classList.remove('active');
+          step.classList.remove('completed');
+          if (progressLines[index-1]) {
+            progressLines[index-1].style.width = '0';
+          }
+        }
+      });
+      
+      // Scroll to top of form
+      formContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    
+    function showSuccessMessage() {
+      formContainer.style.display = 'none';
+      successMessage.style.display = 'block';
+    }
+    
+    function hideSuccessMessage() {
+      successMessage.style.display = 'none';
+      formContainer.style.display = 'block';
+    }
+    
+    // Animate background shapes
+    const bgShapes = document.querySelectorAll('.bg-shape');
+    bgShapes.forEach((shape, index) => {
+      // Set random animation parameters
+      const duration = 15 + Math.random() * 10;
+      const delay = index * 5;
+      
+      // Apply animation with random parameters
+      shape.style.animationDuration = `${duration}s`;
+      shape.style.animationDelay = `${delay}s`;
+    });
+  });

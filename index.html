@@ -14,8 +14,7 @@
     <header>
         <div class="container">
             <div class="logo">
-                <span class="logo-icon"><i class="fas fa-scale-balanced"></i></span>
-                <h1>Lex Moderna</h1>
+                <img src="./weprime2.png" alt="Business Logo" class="business-logo">
             </div>
             <div class="menu-toggle">
                 <div class="hamburger">
@@ -525,7 +524,7 @@
                 <div class="timeline-item">
                     <div class="timeline-number">5</div>
                     <div class="timeline-content">
-                        <h3>Acompanhamento</h3>
+                        <h3>Suporte</h3>
                         <p>Monitoramento contínuo do processo e atualizações regulares sobre o andamento.</p>
                     </div>
                 </div>
@@ -884,79 +883,232 @@
         </div>
     </section>
 
-    <!-- 13. Agende uma Consulta -->
-    <section id="agende">
-        <div class="container">
-            <div class="section-header">
-                <h2>Agende uma Consulta</h2>
-                <div class="separator"></div>
-            </div>
-            <div class="agende-content">
-                <div class="agende-text">
-                    <h3>Estamos prontos para ajudar</h3>
-                    <p>Preencha o formulário ao lado para agendar uma consulta com um de nossos especialistas. Retornaremos seu contato em até 24 horas úteis para confirmar o agendamento.</p>
-                    <div class="agende-info">
-                        <div class="info-item">
-                            <i class="fas fa-phone"></i>
-                            <span>(11) 3456-7890</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>contato@lexmoderna.com.br</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-comment"></i>
-                            <span>WhatsApp: (11) 98765-4321</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="agende-form">
-                    <form id="consulta-form">
-                        <div class="form-group">
-                            <label for="nome">Nome Completo</label>
-                            <input type="text" id="nome" name="nome" required>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">E-mail</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="telefone">Telefone</label>
-                                <input type="tel" id="telefone" name="telefone" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="area">Área Jurídica</label>
-                            <select id="area" name="area" required>
-                                <option value="">Selecione uma área</option>
-                                <option value="empresarial">Direito Empresarial</option>
-                                <option value="civil">Direito Civil</option>
-                                <option value="trabalhista">Direito Trabalhista</option>
-                                <option value="imobiliario">Direito Imobiliário</option>
-                                <option value="tributario">Direito Tributário</option>
-                                <option value="familia">Direito de Família</option>
-                                <option value="outro">Outro</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="mensagem">Descreva brevemente seu caso</label>
-                            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="data">Data preferencial</label>
-                            <input type="date" id="data" name="data" required>
-                        </div>
-                        <div class="form-group checkbox-group">
-                            <input type="checkbox" id="termos" name="termos" required>
-                            <label for="termos">Concordo com a <a href="#">Política de Privacidade</a> e com o uso dos meus dados para contato</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Solicitar Agendamento</button>
-                    </form>
-                </div>
-            </div>
+   <!-- 13. Agende uma Consulta -->
+<section id="agende" class="agende-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Agende uma Consulta</h2>
+        <div class="separator"></div>
+        <p class="section-subtitle">Estamos prontos para ajudar você com suas questões jurídicas</p>
+      </div>
+  
+      <!-- Animated background elements -->
+      <div class="animated-background">
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
+      </div>
+  
+      <!-- Contact Cards Grid -->
+      <div class="contact-cards">
+        
+  
+        <div class="contact-card">
+          <div class="card-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3>E-mail</h3>
+          <p>contato@lexmoderna.com.br</p>
+          <a href="mailto:contato@lexmoderna.com.br" class="card-link">Enviar e-mail</a>
         </div>
-    </section>
+  
+        <div class="contact-card">
+          <div class="card-icon">
+            <i class="fas fa-comment"></i>
+          </div>
+          <h3>WhatsApp</h3>
+          <p>(11) 98765-4321</p>
+          <a href="https://wa.me/5511987654321" class="card-link">Conversar</a>
+        </div>
+  
+        <div class="contact-card">
+          <div class="card-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h3>Endereço</h3>
+          <p>Av. Paulista, 1000 - São Paulo</p>
+          <a href="#" class="card-link">Ver no mapa</a>
+        </div>
+      </div>
+  
+      <!-- Form Section -->
+      <div class="form-section">
+        <div class="form-intro">
+          <h3>Solicite uma Consulta</h3>
+          <p>Preencha o formulário abaixo e nossa equipe entrará em contato em até 24 horas úteis para confirmar seu agendamento.</p>
+        </div>
+  
+        <!-- Form Wrapper -->
+        <div class="form-wrapper">
+          <!-- Success message (hidden by default) -->
+          <div class="success-message" id="success-message">
+            <div class="success-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Solicitação Enviada!</h3>
+            <p>
+              Recebemos sua solicitação de agendamento. Nossa equipe entrará em contato em até 24 horas úteis para confirmar sua consulta.
+            </p>
+            <button class="btn-primary" id="new-consultation-btn">
+              Agendar Nova Consulta
+            </button>
+          </div>
+  
+          <!-- Form container -->
+          <div class="form-container" id="form-container">
+            <!-- Form Progress -->
+            <div class="form-progress">
+              <div class="progress-step active" data-step="1">
+                <div class="step-number">1</div>
+                <div class="step-label">Seus dados</div>
+              </div>
+              <div class="progress-line">
+                <div class="progress-line-fill" id="progress-line-1"></div>
+              </div>
+              <div class="progress-step" data-step="2">
+                <div class="step-number">2</div>
+                <div class="step-label">Seu caso</div>
+              </div>
+              <div class="progress-line">
+                <div class="progress-line-fill" id="progress-line-2"></div>
+              </div>
+              <div class="progress-step" data-step="3">
+                <div class="step-number">3</div>
+                <div class="step-label">Agendamento</div>
+              </div>
+            </div>
+  
+            <form id="consulta-form">
+              <!-- Step 1: Personal Info -->
+              <div class="form-step active" id="step-1">
+                <div class="form-group floating-label">
+                  <input type="text" id="nome" name="nome" required class="form-control">
+                  <label for="nome">Nome Completo</label>
+                </div>
+  
+                <div class="form-row">
+                  <div class="form-group floating-label">
+                    <input type="email" id="email" name="email" required class="form-control">
+                    <label for="email">E-mail</label>
+                  </div>
+  
+                  <div class="form-group floating-label">
+                    <input type="tel" id="telefone" name="telefone" required class="form-control">
+                    <label for="telefone">Telefone</label>
+                  </div>
+                </div>
+  
+                <div class="form-buttons">
+                  <button type="button" class="btn-next" data-next="2">
+                    Próximo <i class="fas fa-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+  
+              <!-- Step 2: Case Info -->
+              <div class="form-step" id="step-2">
+                <div class="form-group">
+                  <div class="select-wrapper">
+                    <select id="area" name="area" required class="form-control">
+                      <option value="" disabled selected>Selecione uma área</option>
+                      <option value="empresarial">Direito Empresarial</option>
+                      <option value="civil">Direito Civil</option>
+                      <option value="trabalhista">Direito Trabalhista</option>
+                      <option value="imobiliario">Direito Imobiliário</option>
+                      <option value="tributario">Direito Tributário</option>
+                      <option value="familia">Direito de Família</option>
+                      <option value="outro">Outro</option>
+                    </select>
+                    <i class="fas fa-chevron-down select-icon"></i>
+                  </div>
+                </div>
+  
+                <div class="form-group floating-label">
+                  <textarea id="mensagem" name="mensagem" rows="4" required class="form-control"></textarea>
+                  <label for="mensagem">Descreva brevemente seu caso</label>
+                </div>
+  
+                <div class="form-buttons">
+                  <button type="button" class="btn-prev" data-prev="1">
+                    <i class="fas fa-arrow-left"></i> Anterior
+                  </button>
+                  <button type="button" class="btn-next" data-next="3">
+                    Próximo <i class="fas fa-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+  
+              <!-- Step 3: Schedule -->
+              <div class="form-step" id="step-3">
+                <div class="form-group floating-label date-input">
+                  <input type="date" id="data" name="data" required class="form-control">
+                  <label for="data">Data preferencial</label>
+                  <i class="fas fa-calendar date-icon"></i>
+                </div>
+  
+                <div class="form-group time-select">
+                  <label>Horário preferencial</label>
+                  <div class="time-options">
+                    <div class="time-option">
+                      <input type="radio" id="time-morning" name="time" value="morning" checked>
+                      <label for="time-morning">
+                        <i class="fas fa-sun"></i>
+                        <span>Manhã</span>
+                        <small>8h - 12h</small>
+                      </label>
+                    </div>
+                    <div class="time-option">
+                      <input type="radio" id="time-afternoon" name="time" value="afternoon">
+                      <label for="time-afternoon">
+                        <i class="fas fa-cloud-sun"></i>
+                        <span>Tarde</span>
+                        <small>13h - 17h</small>
+                      </label>
+                    </div>
+                    <div class="time-option">
+                      <input type="radio" id="time-evening" name="time" value="evening">
+                      <label for="time-evening">
+                        <i class="fas fa-moon"></i>
+                        <span>Noite</span>
+                        <small>18h - 20h</small>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="form-group checkbox-group">
+                  <div class="checkbox-wrapper">
+                    <input type="checkbox" id="termos" name="termos" required>
+                    <label for="termos" class="checkbox-label">
+                      <span class="checkbox-custom">
+                        <i class="fas fa-check"></i>
+                      </span>
+                      <span class="checkbox-text">
+                        Concordo com a <a href="#">Política de Privacidade</a> e com o uso dos meus dados para contato
+                      </span>
+                    </label>
+                  </div>
+                </div>
+  
+                <div class="form-buttons">
+                  <button type="button" class="btn-prev" data-prev="2">
+                    <i class="fas fa-arrow-left"></i> Anterior
+                  </button>
+                  <button type="submit" class="btn-primary submit-btn" id="submit-btn">
+                    <span class="btn-text">Solicitar Agendamento</span>
+                    <span class="btn-loading">
+                      <span class="spinner"></span>
+                      Enviando...
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
     <!-- 14. Contato -->
     <section id="contato">
